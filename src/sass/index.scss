@@ -330,6 +330,25 @@ body {
         }
     }
 
+    #section-contact {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .message-textarea {
+            border-radius: 12px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            width: 500px;
+            height: 200px;
+        }
+
+        .send-button {
+            background-color: $color-dark-blue;
+            color: $color-muted;
+        }
+    }
+
 }
 
 
