@@ -145,4 +145,50 @@ body {
         }
     }
 
+    #section-about {
+        .description {
+            text-align: center;
+            padding: 10px;
+            border: solid;
+            border-radius: 6px;
+            border-width: 1px;
+            border-color: $color-secondary;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            line-height: 1.5;
+        }
+
+        .mw-45 {
+            min-width: 45px;
+        }
+
+        i {
+            color: $color-secondary;
+        }
+
+        .about-section .paragraph {
+            text-align: justify;
+        }
+
+        ul.about-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .about-description {
+            line-height: 1.7;
+        }
+
+        .about-list li:nth-child(2n) {
+            margin-bottom: 10px;
+        }
+
+        .about-titles:hover {
+            color: $color-secondary;
+        }
+
+        .paragraph {
+            color: $color-primary;
+        }
+    }
+
 }

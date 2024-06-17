@@ -111,4 +111,39 @@ body {
   #section-home i:hover {
     color: #cc7000;
   }
+  #section-about .description {
+    text-align: center;
+    padding: 10px;
+    border: solid;
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: #cc7000;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    line-height: 1.5;
+  }
+  #section-about .mw-45 {
+    min-width: 45px;
+  }
+  #section-about i {
+    color: #cc7000;
+  }
+  #section-about .about-section .paragraph {
+    text-align: justify;
+  }
+  #section-about ul.about-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  #section-about .about-description {
+    line-height: 1.7;
+  }
+  #section-about .about-list li:nth-child(2n) {
+    margin-bottom: 10px;
+  }
+  #section-about .about-titles:hover {
+    color: #cc7000;
+  }
+  #section-about .paragraph {
+    color: #000038;
+  }
 }/*# sourceMappingURL=index.css.map */
