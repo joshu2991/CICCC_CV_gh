@@ -293,6 +293,22 @@ body {
   #section-portfolio a:hover img {
     display: none;
   }
+  #section-contact {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #section-contact .message-textarea {
+    border-radius: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 500px;
+    height: 200px;
+  }
+  #section-contact .send-button {
+    background-color: #000017;
+    color: #F4F4F4;
+  }
 }
 @keyframes load-90 {
   from {
