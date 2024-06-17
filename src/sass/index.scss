@@ -1,0 +1,148 @@
+$color-primary: #000038;
+$color-secondary: #cc7000;
+$color-gradient: #ba3530;
+$color-gradient-primary: #8c0145;
+$color-gradient-secondary: #4d0249;
+$color-muted: #F4F4F4;
+$color-dark-orange: darkorange;
+$color-dark-black: #000000;
+$color-dark-blue: #000017;
+$color-lightgray: #D3D3D3;
+$color-lightgray-secondary: #D1D1D1;
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+    z-index: 0;
+    background-color: $color-muted;
+    color: $color-dark-blue;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.text-muted {
+    color: $color-lightgray !important;
+}
+
+.bg-black {
+    background-color: $color-dark-black;
+}
+
+.d-none {
+    display: none;
+}
+
+@media only screen and (min-width:901px) {
+
+
+    .side-bar {
+        position: fixed;
+        display: flex;
+
+        flex: {
+            direction: column;
+        }
+
+        z-index: 10;
+        margin-left: 20px;
+        top: 33%;
+        border-radius: 30%;
+        opacity: 0.5;
+        transition-property: opacity;
+        transition-duration: 0.2s;
+
+        &:hover {
+            opacity: 1;
+
+            a {
+                background-color: $color-primary;
+            }
+        }
+
+        a {
+            background-color: $color-secondary;
+        }
+
+        i {
+            color: $color-muted !important;
+        }
+
+        .i-div {
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .i-div:hover {
+            background-color: $color-secondary;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $color-muted;
+            transition-property: background-color, color;
+            transition-duration: 0.3s, 0.3s;
+        }
+
+        .nav-first {
+            background-color: $color-secondary;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .nav-last {
+            background-color: $color-secondary;
+            border-radius: 0 0 50% 50%;
+            border-top: 0;
+        }
+    }
+
+    #section-home {
+        z-index: 3;
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        overflow-x: hidden;
+
+        .title-section {
+            z-index: 3;
+        }
+
+        .index-bg {
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            position: absolute;
+            opacity: 0.2;
+        }
+
+        a {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            display: flex;
+            color: $color-dark-blue;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        i {
+            z-index: 3;
+        }
+
+        i:hover {
+            color: $color-secondary
+        }
+    }
+
+}
