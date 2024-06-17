@@ -265,59 +265,67 @@ body {
                 font-size: 15px;
             }
 
-            .skills-0 {
-                width: 0;
-                animation: load-0 3s ease-in-out 1s forwards;
+            .skills-0 {width:0;animation:load-0 3s ease-in-out 1s forwards;}
+            .skills-10 {width:0;animation:load-10 3s ease-in-out 1s forwards;}
+            .skills-20 {width:0;animation:load-20 3s ease-in-out 1s forwards;}
+            .skills-30 {width:0;animation:load-30 3s ease-in-out 1s forwards;}
+            .skills-40 {width:0;animation:load-40 3s ease-in-out 1s forwards;}
+            .skills-50 {width:0;animation:load-50 3s ease-in-out 1s forwards;}
+            .skills-60 {width:0;animation:load-60 3s ease-in-out 1s forwards;}
+            .skills-70 {width:0;animation:load-70 3s ease-in-out 1s forwards;}
+            .skills-80 {width:320px;animation:load-80 3s ease-in-out 1s forwards;}
+            .skills-90 {width:0; animation:load-90 3s ease-in-out 1s forwards;}
+            .skills-100 {width:0;animation:load-100 3s ease-in-out 1s forwards;}
+        }
+    }
+
+    #section-portfolio {
+
+        .portfolio-card {
+            border: solid $color-dark-orange 2px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: rgba(119, 143, 168, 0.1) 0px 8px 24px;
+        }
+
+        .portfolio-project-image {
+            object-fit: contain;
+        }
+
+        a:hover {
+
+            text-decoration: none;
+
+            & {
+                min-width: 300px;
+                min-height: 200px;
             }
 
-            .skills-10 {
-                width: 0;
-                animation: load-10 3s ease-in-out 1s forwards;
+            .details-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+
+                button {
+                    display: flex;
+                    background-color: $color-dark-orange;
+                    color: $color-dark-black;
+                    border: solid $color-dark-orange 1px;
+                    border-radius: 12px;
+                    font-size: 17px;
+                    padding: 10px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $color-muted;
+                    }
+                }
             }
 
-            .skills-20 {
-                width: 0;
-                animation: load-20 3s ease-in-out 1s forwards;
-            }
-
-            .skills-30 {
-                width: 0;
-                animation: load-30 3s ease-in-out 1s forwards;
-            }
-
-            .skills-40 {
-                width: 0;
-                animation: load-40 3s ease-in-out 1s forwards;
-            }
-
-            .skills-50 {
-                width: 0;
-                animation: load-50 3s ease-in-out 1s forwards;
-            }
-
-            .skills-60 {
-                width: 0;
-                animation: load-60 3s ease-in-out 1s forwards;
-            }
-
-            .skills-70 {
-                width: 0;
-                animation: load-70 3s ease-in-out 1s forwards;
-            }
-
-            .skills-80 {
-                width: 320px;
-                animation: load-80 3s ease-in-out 1s forwards;
-            }
-
-            .skills-90 {
-                width: 0;
-                animation: load-90 3s ease-in-out 1s forwards;
-            }
-
-            .skills-100 {
-                width: 0;
-                animation: load-100 3s ease-in-out 1s forwards;
+            img {
+                display: none;
             }
         }
     }
