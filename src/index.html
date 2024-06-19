@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index.css" />
-    <title>Portfolio</title>
-  </head>
-  <body></body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +13,7 @@
   <script src="https://kit.fontawesome.com/2096bf060b.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="body" class="theme-light">
   <nav class="side-bar d-flex flex-column">
     <a href="#section-home" class="p-1 nav-first d-flex pointer nav-icon align-items-center justify-content-center">
       <div class="i-div">
@@ -46,16 +35,21 @@
         <i class="fa-solid fa-briefcase"></i>
       </div>
     </a>
-    <a href="#section-contact" class="p-1 nav-last d-flex pointer nav-icon align-items-center justify-content-center">
+    <a href="#section-contact" class="p-1 d-flex pointer nav-icon align-items-center justify-content-center">
       <div class="i-div">
         <i class="fa-solid fa-paper-plane"></i>
+      </div>
+    </a>
+    <a href="#dark-theme" id="change-theme-button" class="p-1 nav-last d-flex pointer nav-icon align-items-center justify-content-center">
+      <div class="i-div">
+        <i class="fa-solid fa-circle-half-stroke"></i>
       </div>
     </a>
   </nav>
 
   <section id="section-home" class="d-flex align-items-center index index-section">
 
-    <img class="index-bg" width="300px" height="200px" src="media/index-background.jpg" alt="image">
+    <img id="home-image" class="index-bg" width="300px" height="200px" src="media/index-background.jpg" alt="image">
 
     <div class="d-flex flex-column align-items-center pl-10 pr-10">
       <div class="title-section ml-5 pl-5">
@@ -336,7 +330,7 @@
         <div class="details-button"><button class="d-none">Details</button></div>
       </a>
       <a href="https://mexicanpeoplehr.com" target="_blank" class="d-flex portfolio-card p-2">
-        <img class="portfolio-project-image" width="300px" height="200px" src="media/mphr_logo_dark.svg" alt="MPHR">
+        <img class="portfolio-project-image" id="mexican-logo" width="300px" height="200px" src="media/mphr_logo_dark.svg" alt="MPHR">
         <div class="details-button"><button class="d-none">Details</button></div>
       </a>
       <a href="https://mponeplus.com" target="_blank" class="d-flex portfolio-card p-2">
@@ -401,8 +395,12 @@
             <input class="d-flex form-control mt-0" type="text" value="" placeholder="Name">
             <input class="d-flex form-control" type="text" value="" placeholder="Email">
             <input class="d-flex form-control" type="text" value="" placeholder="Subject">
-            <button
-              class="pointer d-flex btn roboto-condensed-400 mb-0 fs-2 send-button justify-content-center">Send</button>
+
+            <button class="pointer d-flex btn roboto-condensed-400 mb-0 fs-2 send-button justify-content-center">
+              <span class="send-button-word">Send</span>
+              <span class="send-button-spinner">Loading ...</span>
+            </button>
+
           </div>
         </div>
       </div>
@@ -412,6 +410,8 @@
   <footer class="pt-3 pb-3">
     ©2024 Powered by José Trueba
   </footer>
+  
+  <script src="js/index.js"></script>
 
 </body>
 
