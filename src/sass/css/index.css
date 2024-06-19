@@ -1,3 +1,39 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body.theme-light {
+  --color-primary: #000038;
+  --color-secondary: #cc7000;
+  --color-gradient: #ba3530;
+  --color-gradient-primary: #8c0145;
+  --color-gradient-secondary: #4d0249;
+  --color-muted: #F4F4F4;
+  --color-dark-orange: darkorange;
+  --color-dark-black: #000000;
+  --color-dark-blue: #000017;
+  --color-lightgray: #D3D3D3;
+  --color-lightgray-secondary: #D1D1D1;
+  --color-blue-button: #000c47;
+  --color-white: #FFFFFF;
+}
+
+body.theme-dark {
+  --color-primary: #818181;
+  --color-secondary: #b36200;
+  --color-gradient: #ff4444;
+  --color-gradient-primary: #ff66b2;
+  --color-gradient-secondary: #aa66cc;
+  --color-muted: #101a2b;
+  --color-dark-orange: rgb(182, 101, 2);
+  --color-dark-black: #e2e2e2;
+  --color-dark-blue: #e6e6e6;
+  --color-lightgray: #999999;
+  --color-lightgray-secondary: #272f3f;
+  --color-blue-button: #c97800;
+  --color-white: #000017;
+}
+
 html,
 body {
   padding: 0;
@@ -5,8 +41,6 @@ body {
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
   z-index: 0;
-  background-color: #F4F4F4;
-  color: #000017;
 }
 
 .pointer {
@@ -14,18 +48,47 @@ body {
 }
 
 .text-muted {
-  color: #D3D3D3 !important;
+  color: var(--color-lightgray) !important;
 }
 
 .bg-black {
-  background-color: #000000;
+  background-color: var(--color-lightgray);
+}
+
+.form-control {
+  background-color: var(--color-white);
+  color: var(--color-dark-black);
 }
 
 .d-none {
   display: none;
 }
 
+.send-button {
+  background-color: var(--color-dark-blue);
+  color: var(--color-muted);
+}
+.send-button:active {
+  background-color: var(--color-blue-button);
+}
+.send-button:active .send-button-word {
+  display: none;
+}
+.send-button:active .send-button-spinner {
+  display: block;
+}
+.send-button .send-button-word {
+  display: block;
+}
+.send-button .send-button-spinner {
+  display: none;
+}
+
 @media only screen and (min-width: 901px) {
+  body {
+    background-color: var(--color-muted);
+    color: var(--color-dark-blue);
+  }
   .side-bar {
     position: fixed;
     display: flex;
@@ -42,13 +105,13 @@ body {
     opacity: 1;
   }
   .side-bar:hover a {
-    background-color: #000038;
+    background-color: var(--color-primary);
   }
   .side-bar a {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
   }
   .side-bar i {
-    color: #F4F4F4 !important;
+    color: var(--color-muted) !important;
   }
   .side-bar .i-div {
     width: 2rem;
@@ -58,23 +121,23 @@ body {
     justify-content: center;
   }
   .side-bar .i-div:hover {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #F4F4F4;
+    color: var(--color-muted);
     transition-property: background-color, color;
     transition-duration: 0.3s, 0.3s;
   }
   .side-bar .nav-first {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
     border-radius: 50% 50% 0 0;
   }
   .side-bar .nav-last {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
     border-radius: 0 0 50% 50%;
     border-top: 0;
   }
@@ -100,7 +163,7 @@ body {
     padding: 0;
     text-decoration: none;
     display: flex;
-    color: #000017;
+    color: var(--color-dark-blue);
   }
   #section-home a:visited {
     text-decoration: none;
@@ -109,7 +172,7 @@ body {
     z-index: 3;
   }
   #section-home i:hover {
-    color: #cc7000;
+    color: var(--color-secondary);
   }
   #section-about .description {
     text-align: center;
@@ -117,7 +180,7 @@ body {
     border: solid;
     border-radius: 6px;
     border-width: 1px;
-    border-color: #cc7000;
+    border-color: var(--color-secondary);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     line-height: 1.5;
   }
@@ -125,7 +188,7 @@ body {
     min-width: 45px;
   }
   #section-about i {
-    color: #cc7000;
+    color: var(--color-secondary);
   }
   #section-about .about-section .paragraph {
     text-align: justify;
@@ -141,37 +204,37 @@ body {
     margin-bottom: 10px;
   }
   #section-about .about-titles:hover {
-    color: #cc7000;
+    color: var(--color-secondary);
   }
   #section-about .paragraph {
-    color: #000038;
+    color: var(--color-primary);
   }
   #section-resume {
-    background-color: #000038;
+    background-color: var(--color-primary);
   }
   #section-resume h2 {
-    color: #F4F4F4;
+    color: var(--color-muted);
   }
   #section-resume .text-muted {
-    color: darkorange !important;
+    color: var(--color-dark-orange) !important;
   }
   #section-resume .year-circle {
     border: solid;
     border-width: 2px;
-    border-color: #cc7000;
+    border-color: var(--color-secondary);
     border-radius: 25px;
     min-width: 90px;
     text-align: center;
-    color: #F4F4F4;
+    color: var(--color-muted);
   }
   #section-resume .roboto-condensed-600 {
-    color: white;
+    color: var(--color-white);
   }
   #section-resume .roboto-condensed-400 {
-    color: #D1D1D1;
+    color: var(--color-lightgray-secondary);
   }
   #section-resume .skills .roboto-condensed-400 {
-    color: #F4F4F4;
+    color: var(--color-muted);
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -182,7 +245,7 @@ body {
     width: 400px;
     height: 20px;
     border: solid;
-    border-color: #cc7000;
+    border-color: var(--color-dark-orange);
     border-width: 2px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 4px;
     border-radius: 12px;
@@ -193,19 +256,19 @@ body {
     width: 0;
     height: 18px;
     border: solid;
-    border-color: darkorange;
+    border-color: var(--color-dark-orange);
     border-width: 1px;
     box-shadow: rgba(119, 143, 168, 0.1) 0px 8px 24px;
     border-radius: 12px;
-    background-color: darkorange;
+    background-color: var(--color-dark-orange);
     font-size: 13px;
     opacity: 0.8;
-    color: #000000;
+    color: var(--color-dark-black);
   }
   #section-resume .skills .skill-span {
     position: absolute;
     margin-top: -25px;
-    color: #F4F4F4;
+    color: var(--color-muted);
     font-size: 15px;
   }
   #section-resume .skills .skills-0 {
@@ -241,7 +304,7 @@ body {
     animation: load-70 3s ease-in-out 1s forwards;
   }
   #section-resume .skills .skills-80 {
-    width: 320px;
+    width: 0;
     animation: load-80 3s ease-in-out 1s forwards;
   }
   #section-resume .skills .skills-90 {
@@ -253,7 +316,7 @@ body {
     animation: load-100 3s ease-in-out 1s forwards;
   }
   #section-portfolio .portfolio-card {
-    border: solid darkorange 2px;
+    border: solid var(--color-dark-orange) 2px;
     border-radius: 12px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -279,22 +342,22 @@ body {
   }
   #section-portfolio a:hover .details-button button {
     display: flex;
-    background-color: darkorange;
-    color: #000000;
-    border: solid darkorange 1px;
+    background-color: var(--color-dark-orange);
+    color: var(--color-dark-black);
+    border: solid var(--color-dark-orange) 1px;
     border-radius: 12px;
     font-size: 17px;
     padding: 10px;
     cursor: pointer;
   }
   #section-portfolio a:hover .details-button button:hover {
-    color: #F4F4F4;
+    color: var(--color-muted);
   }
   #section-portfolio a:hover img {
     display: none;
   }
   #section-contact {
-    background-color: white;
+    background-color: var(--color-white);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -304,13 +367,15 @@ body {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: 500px;
     height: 200px;
-  }
-  #section-contact .send-button {
-    background-color: #000017;
-    color: #F4F4F4;
+    background-color: var(--color-white);
+    color: var(--color-dark-black);
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 900px) {
+  body {
+    background-color: var(--color-muted);
+    color: var(--color-dark-blue);
+  }
   .side-bar {
     position: fixed;
     display: flex;
@@ -327,13 +392,13 @@ body {
     opacity: 1;
   }
   .side-bar:hover a {
-    background-color: #000038;
+    background-color: var(--color-primary);
   }
   .side-bar a {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
   }
   .side-bar i {
-    color: #F4F4F4 !important;
+    color: var(--color-muted) !important;
   }
   .side-bar .i-div {
     width: 2rem;
@@ -343,23 +408,23 @@ body {
     justify-content: center;
   }
   .side-bar .i-div:hover {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #F4F4F4;
+    color: var(--color-muted);
     transition-property: background-color, color;
     transition-duration: 0.3s, 0.3s;
   }
   .side-bar .nav-first {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
     border-radius: 50% 50% 0 0;
   }
   .side-bar .nav-last {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
     border-radius: 0 0 50% 50%;
     border-top: 0;
   }
@@ -385,7 +450,7 @@ body {
     padding: 0;
     text-decoration: none;
     display: flex;
-    color: #000017;
+    color: var(--color-dark-blue);
   }
   #section-home a:visited {
     text-decoration: none;
@@ -394,7 +459,7 @@ body {
     z-index: 3;
   }
   #section-home i:hover {
-    color: #cc7000;
+    color: var(--color-secondary);
   }
   #section-home h1 {
     font-size: 3rem !important;
@@ -411,7 +476,7 @@ body {
     border: solid;
     border-radius: 6px;
     border-width: 1px;
-    border-color: #cc7000;
+    border-color: var(--color-secondary);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     line-height: 1.5;
   }
@@ -419,7 +484,7 @@ body {
     min-width: 45px;
   }
   #section-about i {
-    color: #cc7000;
+    color: var(--color-secondary);
     font-size: 1.5rem !important;
   }
   #section-about .about-section .paragraph {
@@ -437,11 +502,11 @@ body {
     margin-bottom: 10px;
   }
   #section-about .about-titles:hover {
-    color: #cc7000;
+    color: var(--color-secondary);
     font-size: 1rem;
   }
   #section-about .paragraph {
-    color: #000038;
+    color: var(--color-primary);
     font-size: 0.8rem !important;
   }
   #section-about h2 {
@@ -459,28 +524,28 @@ body {
     width: 100% !important;
   }
   #section-resume {
-    background-color: #000038;
+    background-color: var(--color-primary);
   }
   #section-resume h2 {
-    color: #F4F4F4;
+    color: var(--color-muted);
   }
   #section-resume .text-muted {
-    color: darkorange !important;
+    color: var(--color-dark-orange) !important;
   }
   #section-resume .year-circle {
     border: solid;
     border-width: 2px;
-    border-color: #cc7000;
+    border-color: var(--color-secondary);
     border-radius: 25px;
     min-width: 90px;
     text-align: center;
-    color: #F4F4F4;
+    color: var(--color-muted);
   }
   #section-resume .roboto-condensed-600 {
-    color: white;
+    color: var(--color-white);
   }
   #section-resume .roboto-condensed-400 {
-    color: #D1D1D1;
+    color: var(--color-lightgray-secondary);
   }
   #section-resume .skills .skills-div {
     flex-direction: column;
@@ -489,7 +554,7 @@ body {
     justify-content: center;
   }
   #section-resume .skills .roboto-condensed-400 {
-    color: #F4F4F4;
+    color: var(--color-muted);
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -500,7 +565,7 @@ body {
     width: 400px;
     height: 20px;
     border: solid;
-    border-color: #cc7000;
+    border-color: var(--color-secondary);
     border-width: 2px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 4px;
     border-radius: 12px;
@@ -511,19 +576,19 @@ body {
     width: 0;
     height: 18px;
     border: solid;
-    border-color: darkorange;
+    border-color: var(--color-dark-orange);
     border-width: 1px;
     box-shadow: rgba(119, 143, 168, 0.1) 0px 8px 24px;
     border-radius: 12px;
-    background-color: darkorange;
+    background-color: var(--color-dark-orange);
     font-size: 13px;
     opacity: 0.8;
-    color: #000000;
+    color: var(--color-dark-black);
   }
   #section-resume .skills .skill-span {
     position: absolute;
     margin-top: -25px;
-    color: #F4F4F4;
+    color: var(--color-muted);
     font-size: 15px;
   }
   #section-resume .skills .skills-0 {
@@ -559,7 +624,7 @@ body {
     animation: load-70 3s ease-in-out 1s forwards;
   }
   #section-resume .skills .skills-80 {
-    width: 320px;
+    width: 0;
     animation: load-80 3s ease-in-out 1s forwards;
   }
   #section-resume .skills .skills-90 {
@@ -580,7 +645,7 @@ body {
     width: 100% !important;
   }
   #section-portfolio .portfolio-card {
-    border: solid darkorange 2px;
+    border: solid var(--color-dark-orange) 2px;
     border-radius: 12px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -608,16 +673,16 @@ body {
   }
   #section-portfolio a:hover .details-button button {
     display: flex;
-    background-color: darkorange;
-    color: #000000;
-    border: solid darkorange 1px;
+    background-color: var(--color-dark-orange);
+    color: var(--color-dark-black);
+    border: solid var(--color-dark-orange) 1px;
     border-radius: 12px;
     font-size: 17px;
     padding: 10px;
     cursor: pointer;
   }
   #section-portfolio a:hover .details-button button:hover {
-    color: #F4F4F4;
+    color: var(--color-muted);
   }
   #section-portfolio a:hover img {
     display: none;
@@ -626,7 +691,7 @@ body {
     flex-direction: column;
   }
   #section-contact {
-    background-color: white;
+    background-color: var(--color-white);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -636,10 +701,27 @@ body {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: 500px;
     height: 200px;
+    background-color: var(--color-white);
+    color: var(--color-dark-black);
   }
   #section-contact .send-button {
-    background-color: #000017;
-    color: #F4F4F4;
+    background-color: var(--color-dark-blue);
+    color: var(--color-muted);
+  }
+  #section-contact .send-button:active {
+    background-color: var(--color-blue-button);
+  }
+  #section-contact .send-button:active .send-button-word {
+    display: none;
+  }
+  #section-contact .send-button:active .send-button-spinner {
+    display: block;
+  }
+  #section-contact .send-button .send-button-word {
+    display: block;
+  }
+  #section-contact .send-button .send-button-spinner {
+    display: none;
   }
   #section-contact .roboto-condensed-400 {
     margin-top: 25px !important;
@@ -659,6 +741,10 @@ body {
   }
 }
 @media only screen and (max-width: 600px) {
+  body {
+    background-color: var(--color-muted);
+    color: var(--color-dark-blue);
+  }
   .side-bar {
     position: fixed;
     display: none !important;
@@ -675,13 +761,13 @@ body {
     opacity: 1;
   }
   .side-bar:hover a {
-    background-color: #000038;
+    background-color: var(--color-primary);
   }
   .side-bar a {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
   }
   .side-bar i {
-    color: #F4F4F4 !important;
+    color: var(--color-muted) !important;
   }
   .side-bar .i-div {
     width: 2rem;
@@ -691,23 +777,23 @@ body {
     justify-content: center;
   }
   .side-bar .i-div:hover {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #F4F4F4;
+    color: var(--color-muted);
     transition-property: background-color, color;
     transition-duration: 0.3s, 0.3s;
   }
   .side-bar .nav-first {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
     border-radius: 50% 50% 0 0;
   }
   .side-bar .nav-last {
-    background-color: #cc7000;
+    background-color: var(--color-secondary);
     border-radius: 0 0 50% 50%;
     border-top: 0;
   }
@@ -733,7 +819,7 @@ body {
     padding: 0;
     text-decoration: none;
     display: flex;
-    color: #000017;
+    color: var(--color-dark-blue);
   }
   #section-home a:visited {
     text-decoration: none;
@@ -742,7 +828,7 @@ body {
     z-index: 3;
   }
   #section-home i:hover {
-    color: #cc7000;
+    color: var(--color-secondary);
   }
   #section-home h1 {
     font-size: 2.5rem !important;
@@ -771,7 +857,7 @@ body {
     border: solid;
     border-radius: 6px;
     border-width: 1px;
-    border-color: #cc7000;
+    border-color: var(--color-secondary);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     line-height: 1.5;
     flex-direction: column-reverse;
@@ -788,7 +874,7 @@ body {
     min-width: 45px;
   }
   #section-about i {
-    color: #cc7000;
+    color: var(--color-secondary);
     font-size: 1.5rem !important;
   }
   #section-about .about-section .paragraph {
@@ -806,11 +892,11 @@ body {
     margin-bottom: 10px;
   }
   #section-about .about-titles:hover {
-    color: #cc7000;
+    color: var(--color-secondary);
     font-size: 1rem;
   }
   #section-about .paragraph {
-    color: #000038;
+    color: var(--color-primary);
     font-size: 0.8rem !important;
   }
   #section-about h2 {
@@ -853,28 +939,28 @@ body {
     text-align: center;
   }
   #section-resume {
-    background-color: #000038;
+    background-color: var(--color-primary);
   }
   #section-resume h2 {
-    color: #F4F4F4;
+    color: var(--color-muted);
   }
   #section-resume .text-muted {
-    color: darkorange !important;
+    color: var(--color-dark-orange) !important;
   }
   #section-resume .year-circle {
     border: solid;
     border-width: 2px;
-    border-color: #cc7000;
+    border-color: var(--color-secondary);
     border-radius: 25px;
     min-width: 90px;
     text-align: center;
-    color: #F4F4F4;
+    color: var(--color-muted);
   }
   #section-resume .roboto-condensed-600 {
-    color: white;
+    color: var(--color-white);
   }
   #section-resume .roboto-condensed-400 {
-    color: #D1D1D1;
+    color: var(--color-lightgray-secondary);
   }
   #section-resume .skills .skills-div {
     flex-direction: column;
@@ -883,7 +969,7 @@ body {
     justify-content: center;
   }
   #section-resume .skills .roboto-condensed-400 {
-    color: #F4F4F4;
+    color: var(--color-muted);
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -894,7 +980,7 @@ body {
     width: 15rem;
     height: 20px;
     border: solid;
-    border-color: #cc7000;
+    border-color: var(--color-secondary);
     border-width: 2px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 4px;
     border-radius: 12px;
@@ -905,19 +991,19 @@ body {
     width: 0;
     height: 18px;
     border: solid;
-    border-color: darkorange;
+    border-color: var(--color-dark-orange);
     border-width: 1px;
     box-shadow: rgba(119, 143, 168, 0.1) 0px 8px 24px;
     border-radius: 12px;
-    background-color: darkorange;
+    background-color: var(--color-dark-orange);
     font-size: 13px;
     opacity: 0.8;
-    color: #000000;
+    color: var(--color-dark-black);
   }
   #section-resume .skills .skill-span {
     position: absolute;
     margin-top: -25px;
-    color: #F4F4F4;
+    color: var(--color-muted);
     font-size: 15px;
   }
   #section-resume .skills .skills-0 {
@@ -953,7 +1039,7 @@ body {
     animation: load-70 3s ease-in-out 1s forwards;
   }
   #section-resume .skills .skills-80 {
-    width: 320px;
+    width: 0;
     animation: load-80 3s ease-in-out 1s forwards;
   }
   #section-resume .skills .skills-90 {
@@ -987,7 +1073,7 @@ body {
     margin: 0 !important;
   }
   #section-portfolio .portfolio-card {
-    border: solid darkorange 2px;
+    border: solid var(--color-dark-orange) 2px;
     border-radius: 12px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -1015,16 +1101,16 @@ body {
   }
   #section-portfolio a:hover .details-button button {
     display: flex;
-    background-color: darkorange;
-    color: #000000;
-    border: solid darkorange 1px;
+    background-color: var(--color-dark-orange);
+    color: var(--color-dark-black);
+    border: solid var(--color-dark-orange) 1px;
     border-radius: 12px;
     font-size: 17px;
     padding: 10px;
     cursor: pointer;
   }
   #section-portfolio a:hover .details-button button:hover {
-    color: #F4F4F4;
+    color: var(--color-muted);
   }
   #section-portfolio a:hover img {
     display: none;
@@ -1033,7 +1119,7 @@ body {
     flex-direction: column;
   }
   #section-contact {
-    background-color: white;
+    background-color: var(--color-white);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1043,10 +1129,27 @@ body {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: 13rem;
     height: 200px;
+    background-color: var(--color-white);
+    color: var(--color-dark-black);
   }
   #section-contact .send-button {
-    background-color: #000017;
-    color: #F4F4F4;
+    background-color: var(--color-dark-blue);
+    color: var(--color-muted);
+  }
+  #section-contact .send-button:active {
+    background-color: var(--color-blue-button);
+  }
+  #section-contact .send-button:active .send-button-word {
+    display: none;
+  }
+  #section-contact .send-button:active .send-button-spinner {
+    display: block;
+  }
+  #section-contact .send-button .send-button-word {
+    display: block;
+  }
+  #section-contact .send-button .send-button-spinner {
+    display: none;
   }
   #section-contact .roboto-condensed-400 {
     margin-top: 25px !important;
