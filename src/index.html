@@ -6,6 +6,7 @@
   <title>Jose Trueba</title>
   <link rel="stylesheet" href="sass/css/index.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="sass/css/dark-theme.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
@@ -14,6 +15,7 @@
 </head>
 
 <body id="body" class="theme-light">
+  <div class="d-none menu"><i class="fa-solid fa-bars text-white fa-xl pointer" id="menu-icon"></i></div>
   <nav class="side-bar d-flex flex-column">
     <a href="#section-home" class="p-1 nav-first d-flex pointer nav-icon align-items-center justify-content-center">
       <div class="i-div">
@@ -49,7 +51,7 @@
 
   <section id="section-home" class="d-flex align-items-center index index-section">
 
-    <img id="home-image" class="index-bg" width="300px" height="200px" src="media/index-background.jpg" alt="image">
+    <img id="home-image" class="index-bg load-images-slow" width="300px" height="200px" src="media/index-background.jpg" alt="image">
 
     <div class="d-flex flex-column align-items-center pl-10 pr-10">
       <div class="title-section ml-5 pl-5">
@@ -57,11 +59,11 @@
         <h2 class="roboto-condensed-600 fs-5 mb-3 mt-0">Developer</h2>
         <div class="d-flex gap-3 icon-container">
           <a target="_blank" href="https://github.com/joshu2991"><i
-              class="pointer hover-primary d-flex fa-brands fa-github fa-xl"></i></a>
+              class="pointer d-flex fa-brands fa-github fa-xl"></i></a>
           <a target="_blank" href="https://www.linkedin.com/in/josehumbertotrueba"><i
-              class="pointer hover-primary d-flex fa-brands fa-linkedin fa-xl"></i></a>
+              class="pointer d-flex fa-brands fa-linkedin fa-xl"></i></a>
           <a target="_blank" href="https://instagram.com/joshu2991"><i
-              class="pointer hover-primary fa-brands fa-square-instagram fa-xl"></i></a>
+              class="pointer fa-brands fa-square-instagram fa-xl"></i></a>
         </div>
       </div>
     </div>
@@ -177,8 +179,8 @@
       <div class="div-resume d-flex justify-content-center gap-4 w-100 pl-10 pr-10 mt-3 ml-5">
 
         <div class="d-flex flex-column w-40">
-          <h2 class="d-flex roboto-condensed-600 fs-5 mb-0 mt-0">Education</h2>
-          <div class="d-flex gap-7">
+          <h2 class="d-flex roboto-condensed-600 fs-5 mb-0 mt-0 dark-theme exp-edu-title">Education</h2>
+          <div class="d-flex gap-7 skills-card dark-theme exp-edu-section">
             <div class="d-flex flex-column m-3 gap-6">
               <div class="d-flex gap-3">
                 <span class="">
@@ -222,8 +224,8 @@
         </div>
 
         <div class="d-flex flex-column w-60">
-          <h2 class="d-flex roboto-condensed-600 fs-5 mb-0 mt-0">Experience</h2>
-          <div class="d-flex gap-7">
+          <h2 class="d-flex roboto-condensed-600 fs-5 mb-0 mt-0 dark-theme exp-edu-title">Experience</h2>
+          <div class="d-flex gap-7 dark-theme exp-edu-section">
             <div class="d-flex flex-column m-3 gap-6">
               <div class="d-flex gap-3">
                 <span class="">
@@ -290,7 +292,7 @@
     </div>
 
     <div class="d-flex w-100 skills">
-      <div class="div-skills-inner d-flex flex-column justify-content-center gap-2 w-100 pl-10 pr-10 mt-3 ml-5">
+      <div class="div-skills-inner d-flex flex-column justify-content-center gap-2 w-100 pl-10 pr-10 mt-3 ml-5 mr-5">
         <h2 class="d-flex roboto-condensed-600 fs-5 mb-0 mt-0">Skills</h2>
         <div class="d-flex justify-content-between w-90 mt-3 skills-div">
           <div class="d-flex flex-column gap-4">
@@ -341,44 +343,44 @@
   </section>
 
   <section id="section-contact" class="d-flex flex-column contact-section pt-6 pb-15 pl-10 pr-10">
-    <h2 class="d-flex roboto-condensed-600 fs-5 mb-0 text-white mt-5 mb-8">Contact</h2>
+    <h2 class="d-flex roboto-condensed-600 fs-5 mb-0 text-white-dark mt-5 mb-8">Contact</h2>
     <div class="d-flex contact-div">
       <div class="d-flex flex-column justify-content-between info-icons">
         <div class="d-flex gap-4 mb-6">
-          <div class="d-flex border-radius-50 border border-white fs-2 p-2">
-            <i class="fa-solid fa-location-dot text-white"></i>
+          <div class="d-flex border-radius-50 border border-white fs-2 p-2 text-white-dark">
+            <i class="fa-solid fa-location-dot text-white-dark"></i>
           </div>
           <div class="d-flex flex-column align-items-start justify-content-start">
-            <div class="d-flex text-white roboto-condensed-600 fs-3 justify-content-start">
+            <div class="d-flex roboto-condensed-600 fs-3 justify-content-start text-white-dark">
               Location
             </div>
-            <div class="d-flex flex-column text-white roboto-condensed-400 fs-2 justify-content-start mt-1">
+            <div class="d-flex flex-column roboto-condensed-400 fs-2 justify-content-start mt-1 text-white-dark">
               Burnaby, BC
             </div>
           </div>
         </div>
         <div class="d-flex gap-4 mb-6">
-          <div class="d-flex border-radius-50 border border-white fs-2 p-2">
-            <i class="fa-solid fa-envelope text-white"></i>
+          <div class="d-flex border-radius-50 border border-white fs-2 p-2 text-white-dark">
+            <i class="fa-solid fa-envelope text-white-dark"></i>
           </div>
           <div class="d-flex flex-column align-items-start justify-content-start">
-            <div class="d-flex text-white roboto-condensed-600 fs-3 justify-content-start">
+            <div class="d-flex text-white-dark roboto-condensed-600 fs-3 justify-content-start">
               Email
             </div>
-            <div class="d-flex flex-column text-white roboto-condensed-400 fs-2 justify-content-start mt-1">
+            <div class="d-flex flex-column text-white-dark roboto-condensed-400 fs-2 justify-content-start mt-1">
               jhtrueba1@gmail.com
             </div>
           </div>
         </div>
         <div class="d-flex gap-4">
-          <div class="d-flex border-radius-50 border border-white fs-2 p-2">
-            <i class="fa-solid fa-phone text-white"></i>
+          <div class="d-flex border-radius-50 border border-white fs-2 p-2 text-white-dark">
+            <i class="fa-solid fa-phone text-white-dark"></i>
           </div>
           <div class="d-flex flex-column align-items-start justify-content-start">
-            <div class="d-flex text-white roboto-condensed-600 fs-3 justify-content-start">
+            <div class="d-flex text-white-dark roboto-condensed-600 fs-3 justify-content-start">
               Phone
             </div>
-            <div class="d-flex flex-column text-white roboto-condensed-400 fs-2 justify-content-start mt-1">
+            <div class="d-flex flex-column text-white-dark roboto-condensed-400 fs-2 justify-content-start mt-1">
               +1 (236) 996-2713
             </div>
           </div>
@@ -387,7 +389,7 @@
 
       <div class="d-flex flex-column pl-15 gap-4">
         <div class="d-flex flex-column">
-          <h2 class="d-flex roboto-condensed-400 fs-3 mb-0 mt-0 text-white">Message</h2>
+          <h2 class="d-flex roboto-condensed-400 fs-3 mb-0 mt-0 text-white-dark">Message</h2>
         </div>
         <div class="div-message d-flex gap-4">
           <textarea class="d-flex message-textarea p-3" name="" id=""></textarea>

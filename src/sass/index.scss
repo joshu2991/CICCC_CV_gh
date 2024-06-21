@@ -97,6 +97,17 @@ body {
     display: none;
 }
 
+.text-white {
+    color: white;
+}
+
+#menu-icon {
+    opacity: 0.3;
+    &:hover {
+        opacity: 1;
+    }
+}
+
 .send-button {
     background-color: var(--color-dark-blue);
     color: var(--color-muted);
@@ -220,7 +231,7 @@ body {
                 height: 100%;
                 z-index: 2;
                 position: absolute;
-                opacity: 0.2;
+                opacity: 0;
             }
     
             a {
@@ -240,7 +251,9 @@ body {
             }
     
             i:hover {
-                color: var(--color-secondary)
+                color: var(--color-secondary);
+                transition-property: background-color, color;
+                transition-duration: 0.3s, 0.3s;
             }
         }
     
@@ -330,7 +343,6 @@ body {
                 }
     
                 .skill-bar {
-                    // display: flex;
                     width: 400px;
                     height: 20px;
                     border: solid;
@@ -339,7 +351,7 @@ body {
                     box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 4px;
                     border-radius: 12px;
                     background-color: transparent;
-                    // margin-top: 45px;
+                    filter: drop-shadow(2px 4px 6px black);
                 }
     
                 .skills-intern-bar {
@@ -477,6 +489,14 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            cursor: pointer !important;
+    
+            .text-white-dark:active,
+            .text-white-dark:hover {
+                cursor: pointer !important;
+                color: var(--color-dark-orange) !important;
+            }
     
             .message-textarea {
                 border-radius: 12px;
@@ -579,7 +599,7 @@ body {
             height: 100%;
             z-index: 2;
             position: absolute;
-            opacity: 0.2;
+            opacity: 0;
         }
 
         a {
@@ -740,6 +760,7 @@ body {
                 box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 4px;
                 border-radius: 12px;
                 background-color: transparent;
+                filter: drop-shadow(2px 4px 6px black);
             }
 
             .skills-intern-bar {
@@ -962,9 +983,17 @@ body {
         color: var(--color-dark-blue);
     }
 
+    .menu {
+        display: inline;
+        position: fixed;
+        padding: 25px;
+        z-index: 5;
+    }
+
     .side-bar {
         position: fixed;
-        display: none !important;
+        // display: none !important;
+        left: -80px;
 
         flex: {
             direction: column;
@@ -1043,7 +1072,8 @@ body {
             height: 100%;
             z-index: 2;
             position: absolute;
-            opacity: 0.2;
+            opacity: 0;
+            object-fit: cover;
         }
 
         a {
@@ -1260,6 +1290,7 @@ body {
                 box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 4px;
                 border-radius: 12px;
                 background-color: transparent;
+                filter: drop-shadow(2px 4px 6px black);
             }
 
             .skills-intern-bar {
@@ -1342,6 +1373,7 @@ body {
 
         .div-resume {
             flex-direction: column;
+            margin-right: 2.5rem;
 
             .w-40 {
                 width: 100% !important;
@@ -1495,6 +1527,24 @@ body {
 }
 
 
+.load-images-slow {
+    opacity: 0;
+    animation: slow-loading 3s ease-in-out 1s forwards;
+}
+
+@keyframes slow-loading{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+
 @keyframes load-90 {
     from {
         width: 0%;
@@ -1532,5 +1582,24 @@ body {
 
     to {
         width: 70%;
+    }
+}
+
+@keyframes show-navbar {
+    from {
+        left: -80px;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes hide-navbar {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: -80px;
     }
 }

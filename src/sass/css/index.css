@@ -64,6 +64,17 @@ body {
   display: none;
 }
 
+.text-white {
+  color: white;
+}
+
+#menu-icon {
+  opacity: 0.3;
+}
+#menu-icon:hover {
+  opacity: 1;
+}
+
 .send-button {
   background-color: var(--color-dark-blue);
   color: var(--color-muted);
@@ -156,7 +167,7 @@ body {
     height: 100%;
     z-index: 2;
     position: absolute;
-    opacity: 0.2;
+    opacity: 0;
   }
   #section-home a {
     margin: 0;
@@ -173,6 +184,8 @@ body {
   }
   #section-home i:hover {
     color: var(--color-secondary);
+    transition-property: background-color, color;
+    transition-duration: 0.3s, 0.3s;
   }
   #section-about .description {
     text-align: center;
@@ -250,6 +263,7 @@ body {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 4px;
     border-radius: 12px;
     background-color: transparent;
+    filter: drop-shadow(2px 4px 6px black);
   }
   #section-resume .skills .skills-intern-bar {
     padding-left: 3px;
@@ -361,6 +375,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer !important;
+  }
+  #section-contact .text-white-dark:active,
+  #section-contact .text-white-dark:hover {
+    cursor: pointer !important;
+    color: var(--color-dark-orange) !important;
   }
   #section-contact .message-textarea {
     border-radius: 12px;
@@ -443,7 +463,7 @@ body {
     height: 100%;
     z-index: 2;
     position: absolute;
-    opacity: 0.2;
+    opacity: 0;
   }
   #section-home a {
     margin: 0;
@@ -570,6 +590,7 @@ body {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 4px;
     border-radius: 12px;
     background-color: transparent;
+    filter: drop-shadow(2px 4px 6px black);
   }
   #section-resume .skills .skills-intern-bar {
     padding-left: 3px;
@@ -745,9 +766,15 @@ body {
     background-color: var(--color-muted);
     color: var(--color-dark-blue);
   }
+  .menu {
+    display: inline;
+    position: fixed;
+    padding: 25px;
+    z-index: 5;
+  }
   .side-bar {
     position: fixed;
-    display: none !important;
+    left: -80px;
     flex-direction: column;
     z-index: 10;
     margin-left: 20px;
@@ -812,7 +839,9 @@ body {
     height: 100%;
     z-index: 2;
     position: absolute;
-    opacity: 0.2;
+    opacity: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   #section-home a {
     margin: 0;
@@ -985,6 +1014,7 @@ body {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 4px;
     border-radius: 12px;
     background-color: transparent;
+    filter: drop-shadow(2px 4px 6px black);
   }
   #section-resume .skills .skills-intern-bar {
     padding-left: 3px;
@@ -1052,6 +1082,7 @@ body {
   }
   #section-resume .div-resume {
     flex-direction: column;
+    margin-right: 2.5rem;
   }
   #section-resume .div-resume .w-40 {
     width: 100% !important;
@@ -1168,6 +1199,22 @@ body {
     padding-left: 2rem !important;
   }
 }
+.load-images-slow {
+  opacity: 0;
+  animation: slow-loading 3s ease-in-out 1s forwards;
+}
+
+@keyframes slow-loading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
 @keyframes load-90 {
   from {
     width: 0%;
@@ -1198,5 +1245,21 @@ body {
   }
   to {
     width: 70%;
+  }
+}
+@keyframes show-navbar {
+  from {
+    left: -80px;
+  }
+  to {
+    left: 0px;
+  }
+}
+@keyframes hide-navbar {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -80px;
   }
 }/*# sourceMappingURL=index.css.map */
