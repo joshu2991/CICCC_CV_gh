@@ -1,0 +1,48 @@
+.dark{
+
+
+
+    &.exp-edu-section {
+        border: solid;
+        border-radius: 12px;
+        background-color: var(--color-white);
+        border-color: var(--color-secondary);
+        filter: drop-shadow(2px 4px 6px black);
+    }
+
+    
+    
+    &.dark-theme {
+        color: var(--color-dark-blue) !important;
+        margin-bottom: 25px !important;
+    }
+
+    .year-circle {
+        color: var(--color-dark-blue) !important;
+    }
+
+    .roboto-condensed-600.paragraph {
+        color: var(--color-dark-blue) !important;
+    }
+
+    .roboto-condensed-400.paragraph {
+        color: var(--color-primary) !important;
+    }
+
+
+    #section-contact {
+        color: var(--color-white) !important;
+        cursor: pointer !important;
+
+        
+    }
+
+    &.dark-border:active,
+    &.dark-border:hover {
+        cursor: pointer !important;
+        color: var(--color-dark-orange) !important;
+        transition-property: background-color, color;
+        transition-duration: 0.3s, 0.3s;
+    }
+
+}
