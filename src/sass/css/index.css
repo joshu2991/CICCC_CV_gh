@@ -41,6 +41,11 @@ body {
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
   z-index: 0;
+  overflow-x: hidden;
+}
+
+.opacity_zero {
+  opacity: 0 !important;
 }
 
 .pointer {
@@ -55,6 +60,10 @@ body {
   background-color: var(--color-lightgray);
 }
 
+.bg-black-card {
+  background-color: var(--color-dark-black);
+}
+
 .form-control {
   background-color: var(--color-white);
   color: var(--color-dark-black);
@@ -62,6 +71,10 @@ body {
 
 .d-none {
   display: none;
+}
+
+.d-none-nav {
+  display: none !important;
 }
 
 .text-white {
@@ -95,25 +108,362 @@ body {
   display: none;
 }
 
-@media only screen and (min-width: 901px) {
+@media only screen and (min-width: 901px) and (max-width: 1199px) {
   body {
     background-color: var(--color-muted);
     color: var(--color-dark-blue);
   }
   .side-bar {
     position: fixed;
-    display: flex;
-    flex-direction: column;
     z-index: 10;
     margin-left: 20px;
     top: 33%;
     border-radius: 30%;
-    opacity: 0.5;
-    transition-property: opacity;
+    opacity: 0;
+    transition-property: opacity, display;
     transition-duration: 0.2s;
+    animation: slow-loading-side-bar 6s ease-in-out 1s forwards;
+    display: flex;
+    flex-direction: column;
   }
   .side-bar:hover {
     opacity: 1;
+  }
+  .side-bar:hover a {
+    background-color: var(--color-primary);
+  }
+  .side-bar a {
+    background-color: var(--color-secondary);
+  }
+  .side-bar i {
+    color: var(--color-muted) !important;
+  }
+  .side-bar .i-div {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .side-bar .i-div:hover {
+    background-color: var(--color-secondary);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted);
+    transition-property: background-color, color;
+    transition-duration: 0.3s, 0.3s;
+  }
+  .side-bar .nav-first {
+    background-color: var(--color-secondary);
+    border-radius: 50% 50% 0 0;
+  }
+  .side-bar .nav-last {
+    background-color: var(--color-secondary);
+    border-radius: 0 0 50% 50%;
+    border-top: 0;
+  }
+  #section-home {
+    z-index: 3;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  #section-home .title-section {
+    z-index: 3;
+  }
+  #section-home .index-bg {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    opacity: 0;
+  }
+  #section-home a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    display: flex;
+    color: var(--color-dark-blue);
+  }
+  #section-home a:visited {
+    text-decoration: none;
+  }
+  #section-home i {
+    z-index: 3;
+  }
+  #section-home i:hover {
+    color: var(--color-secondary);
+    transition-property: background-color, color;
+    transition-duration: 0.3s, 0.3s;
+  }
+  #section-about .description {
+    text-align: center;
+    padding: 10px;
+    border: solid;
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: var(--color-secondary);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    line-height: 1.5;
+  }
+  #section-about .mw-45 {
+    min-width: 45px;
+  }
+  #section-about i {
+    color: var(--color-secondary);
+  }
+  #section-about .about-section .paragraph {
+    text-align: justify;
+  }
+  #section-about ul.about-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  #section-about .about-description {
+    line-height: 1.7;
+  }
+  #section-about .about-list li:nth-child(2n) {
+    margin-bottom: 10px;
+  }
+  #section-about .about-titles:hover {
+    color: var(--color-secondary);
+  }
+  #section-about .paragraph {
+    color: var(--color-primary);
+  }
+  #section-resume {
+    background-color: var(--color-primary);
+  }
+  #section-resume h2 {
+    color: var(--color-muted);
+  }
+  #section-resume .text-muted {
+    color: var(--color-dark-orange) !important;
+  }
+  #section-resume .year-circle {
+    border: solid;
+    border-width: 2px;
+    border-color: var(--color-secondary);
+    border-radius: 25px;
+    min-width: 90px;
+    text-align: center;
+    color: var(--color-muted);
+  }
+  #section-resume .roboto-condensed-600 {
+    color: var(--color-white);
+  }
+  #section-resume .roboto-condensed-400 {
+    color: var(--color-lightgray-secondary);
+  }
+  #section-resume .skills .skills-div {
+    width: 100% !important;
+  }
+  #section-resume .skills .skills-div div {
+    width: 90%;
+  }
+  #section-resume .skills .roboto-condensed-400 {
+    color: var(--color-muted);
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+  }
+  #section-resume .skills .skill-bar {
+    width: 400px;
+    height: 20px;
+    border: solid;
+    border-color: var(--color-dark-orange);
+    border-width: 2px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 4px;
+    border-radius: 12px;
+    background-color: transparent;
+    filter: drop-shadow(2px 4px 6px black);
+  }
+  #section-resume .skills .skills-intern-bar {
+    padding-left: 3px;
+    width: 0;
+    height: 18px;
+    border: solid;
+    border-color: var(--color-dark-orange);
+    border-width: 1px;
+    box-shadow: rgba(119, 143, 168, 0.1) 0px 8px 24px;
+    border-radius: 12px;
+    background-color: var(--color-dark-orange);
+    font-size: 13px;
+    opacity: 0.8;
+    color: var(--color-dark-black);
+  }
+  #section-resume .skills .skill-span {
+    position: absolute;
+    margin-top: -25px;
+    color: var(--color-muted);
+    font-size: 15px;
+  }
+  #section-resume .skills .skills-0 {
+    width: 0;
+    animation: load-0 3s ease-in-out 1s forwards;
+  }
+  #section-resume .skills .skills-10 {
+    width: 0;
+    animation: load-10 3s ease-in-out 1s forwards;
+  }
+  #section-resume .skills .skills-20 {
+    width: 0;
+    animation: load-20 3s ease-in-out 1s forwards;
+  }
+  #section-resume .skills .skills-30 {
+    width: 0;
+    animation: load-30 3s ease-in-out 1s forwards;
+  }
+  #section-resume .skills .skills-40 {
+    width: 0;
+    animation: load-40 3s ease-in-out 1s forwards;
+  }
+  #section-resume .skills .skills-50 {
+    width: 0;
+    animation: load-50 3s ease-in-out 1s forwards;
+  }
+  #section-resume .skills .skills-60 {
+    width: 0;
+    animation: load-60 3s ease-in-out 1s forwards;
+  }
+  #section-resume .skills .skills-70 {
+    width: 0;
+    animation: load-70 3s ease-in-out 1s forwards;
+  }
+  #section-resume .skills .skills-80 {
+    width: 0;
+    animation: load-80 3s ease-in-out 1s forwards;
+  }
+  #section-resume .skills .skills-90 {
+    width: 0;
+    animation: load-90 3s ease-in-out 1s forwards;
+  }
+  #section-resume .skills .skills-100 {
+    width: 0;
+    animation: load-100 3s ease-in-out 1s forwards;
+  }
+  #section-resume .exp-edu-section div:nth-child(1) div {
+    flex-direction: column;
+  }
+  #section-portfolio .portfolio-card {
+    border: solid var(--color-dark-orange) 2px;
+    border-radius: 12px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    box-shadow: rgba(119, 143, 168, 0.1) 0px 8px 24px;
+  }
+  #section-portfolio .portfolio-project-image {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  #section-portfolio .div-portfolio {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  #section-portfolio a {
+    padding: 0 !important;
+  }
+  #section-portfolio a img {
+    padding: 1rem !important;
+  }
+  #section-portfolio a, #section-portfolio a img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  #section-portfolio a:hover {
+    text-decoration: none;
+    position: relative;
+  }
+  #section-portfolio a:hover {
+    max-width: 100%;
+    height: auto;
+  }
+  #section-portfolio a:hover .details-button {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(2px 4px 6px black);
+  }
+  #section-portfolio a:hover .details-button button {
+    display: flex;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    border: solid var(--color-dark-blue) 1px;
+    border-radius: 12px;
+    font-size: 17px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  #section-portfolio a:hover .details-button button:hover {
+    color: var(--color-dark-orange);
+  }
+  #section-portfolio a:hover img {
+    filter: blur(4px);
+  }
+  #section-contact {
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #section-contact .message-div {
+    display: inline;
+  }
+  #section-contact .text-white-dark:active,
+  #section-contact .text-white-dark:hover {
+    cursor: pointer !important;
+    color: var(--color-dark-orange) !important;
+  }
+  #section-contact .info-icons {
+    display: none;
+  }
+  #section-contact .message-textarea {
+    border-radius: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 500px;
+    height: 200px;
+    background-color: var(--color-white);
+    color: var(--color-dark-black);
+  }
+  #section-contact .contact-div div:nth-child(2) {
+    padding-left: 0 !important;
+  }
+  #section-contact .roboto-condensed-400 {
+    display: inline;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body {
+    background-color: var(--color-muted);
+    color: var(--color-dark-blue);
+  }
+  .side-bar {
+    position: fixed;
+    z-index: 10;
+    margin-left: 20px;
+    top: 33%;
+    border-radius: 30%;
+    opacity: 0;
+    transition-property: opacity, display;
+    transition-duration: 0.2s;
+    animation: slow-loading-side-bar 6s ease-in-out 1s forwards;
+    display: flex;
+    flex-direction: column;
+  }
+  .side-bar:hover {
+    opacity: 1 !important;
   }
   .side-bar:hover a {
     background-color: var(--color-primary);
@@ -340,42 +690,64 @@ body {
     -o-object-fit: contain;
        object-fit: contain;
   }
-  #section-portfolio a:hover {
-    text-decoration: none;
+  #section-portfolio .div-portfolio {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  #section-portfolio a {
+    padding: 0 !important;
+  }
+  #section-portfolio a img {
+    padding: 1rem !important;
+  }
+  #section-portfolio a,
+  #section-portfolio a img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
   }
   #section-portfolio a:hover {
-    min-width: 300px;
-    min-height: 200px;
+    text-decoration: none;
+    position: relative;
+  }
+  #section-portfolio a:hover {
+    max-width: 100%;
+    height: auto;
   }
   #section-portfolio a:hover .details-button {
     display: flex;
+    position: absolute;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+    filter: drop-shadow(2px 4px 6px black);
   }
   #section-portfolio a:hover .details-button button {
     display: flex;
-    background-color: var(--color-dark-orange);
-    color: var(--color-dark-black);
-    border: solid var(--color-dark-orange) 1px;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    border: solid var(--color-dark-blue) 1px;
     border-radius: 12px;
     font-size: 17px;
     padding: 10px;
     cursor: pointer;
+    font-weight: 700;
   }
   #section-portfolio a:hover .details-button button:hover {
-    color: var(--color-muted);
+    color: var(--color-dark-orange);
   }
   #section-portfolio a:hover img {
-    display: none;
+    filter: blur(4px);
   }
   #section-contact {
     background-color: var(--color-white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer !important;
+  }
+  #section-contact .message-div {
+    display: inline;
   }
   #section-contact .text-white-dark:active,
   #section-contact .text-white-dark:hover {
@@ -390,6 +762,9 @@ body {
     background-color: var(--color-white);
     color: var(--color-dark-black);
   }
+  #section-contact .roboto-condensed-400 {
+    display: inline;
+  }
 }
 @media only screen and (min-width: 601px) and (max-width: 900px) {
   body {
@@ -398,15 +773,16 @@ body {
   }
   .side-bar {
     position: fixed;
-    display: flex;
-    flex-direction: column;
     z-index: 10;
     margin-left: 20px;
     top: 33%;
     border-radius: 30%;
-    opacity: 0.5;
-    transition-property: opacity;
+    opacity: 0;
+    transition-property: opacity, display;
     transition-duration: 0.2s;
+    animation: slow-loading-side-bar 6s ease-in-out 1s forwards;
+    display: flex;
+    flex-direction: column;
   }
   .side-bar:hover {
     opacity: 1;
@@ -676,14 +1052,32 @@ body {
     -o-object-fit: contain;
        object-fit: contain;
   }
+  #section-portfolio .div-portfolio {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  #section-portfolio a {
+    padding: 0 !important;
+  }
+  #section-portfolio a img {
+    padding: 1rem !important;
+  }
+  #section-portfolio a,
+  #section-portfolio a img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-height: 163px;
+  }
   #section-portfolio a:hover {
     text-decoration: none;
     display: flex;
     align-items: center;
+    position: relative;
   }
   #section-portfolio a:hover {
-    min-width: 300px;
-    min-height: 200px;
+    max-width: 100%;
+    height: auto;
   }
   #section-portfolio a:hover .details-button {
     display: flex;
@@ -691,22 +1085,25 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
+    position: absolute;
+    filter: drop-shadow(2px 4px 6px black);
   }
   #section-portfolio a:hover .details-button button {
     display: flex;
-    background-color: var(--color-dark-orange);
-    color: var(--color-dark-black);
-    border: solid var(--color-dark-orange) 1px;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    border: solid var(--color-dark-blue) 1px;
     border-radius: 12px;
     font-size: 17px;
     padding: 10px;
     cursor: pointer;
+    font-weight: 700;
   }
   #section-portfolio a:hover .details-button button:hover {
-    color: var(--color-muted);
+    color: var(--color-dark-orange);
   }
   #section-portfolio a:hover img {
-    display: none;
+    filter: blur(4px);
   }
   #section-portfolio .div-portfolio {
     flex-direction: column;
@@ -746,6 +1143,10 @@ body {
   }
   #section-contact .roboto-condensed-400 {
     margin-top: 25px !important;
+    display: inline;
+  }
+  #section-contact .message-div {
+    display: inline;
   }
   #section-contact .contact-div {
     flex-direction: column;
@@ -759,6 +1160,11 @@ body {
   #section-contact .pl-15 {
     padding-right: 5.5rem;
     padding-left: 5.5rem;
+  }
+  #section-contact .text-white-dark:active,
+  #section-contact .text-white-dark:hover {
+    cursor: pointer !important;
+    color: var(--color-dark-orange) !important;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -775,7 +1181,6 @@ body {
   .side-bar {
     position: fixed;
     left: -80px;
-    flex-direction: column;
     z-index: 10;
     margin-left: 20px;
     top: 33%;
@@ -783,6 +1188,9 @@ body {
     opacity: 0.5;
     transition-property: opacity;
     transition-duration: 0.2s;
+    animation: slow-loading-side-bar 6s ease-in-out 1s forwards;
+    display: flex;
+    flex-direction: column;
   }
   .side-bar:hover {
     opacity: 1;
@@ -1006,7 +1414,7 @@ body {
     font-size: 15px;
   }
   #section-resume .skills .skill-bar {
-    width: 15rem;
+    width: 100%;
     height: 20px;
     border: solid;
     border-color: var(--color-secondary);
@@ -1103,6 +1511,9 @@ body {
     padding: 3rem !important;
     margin: 0 !important;
   }
+  #section-resume .flex-column div div {
+    width: 98%;
+  }
   #section-portfolio .portfolio-card {
     border: solid var(--color-dark-orange) 2px;
     border-radius: 12px;
@@ -1114,14 +1525,32 @@ body {
     -o-object-fit: contain;
        object-fit: contain;
   }
+  #section-portfolio .div-portfolio {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  #section-portfolio a {
+    padding: 0 !important;
+  }
+  #section-portfolio a img {
+    padding: 1rem !important;
+  }
+  #section-portfolio a,
+  #section-portfolio a img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-height: 163px;
+  }
   #section-portfolio a:hover {
     text-decoration: none;
     display: flex;
     align-items: center;
+    position: relative;
   }
   #section-portfolio a:hover {
-    min-width: 300px;
-    min-height: 200px;
+    min-width: 100%;
+    min-height: auto;
   }
   #section-portfolio a:hover .details-button {
     display: flex;
@@ -1129,22 +1558,25 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
+    filter: drop-shadow(2px 4px 6px black);
+    position: absolute;
   }
   #section-portfolio a:hover .details-button button {
     display: flex;
-    background-color: var(--color-dark-orange);
-    color: var(--color-dark-black);
-    border: solid var(--color-dark-orange) 1px;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    border: solid var(--color-dark-blue) 1px;
     border-radius: 12px;
     font-size: 17px;
     padding: 10px;
     cursor: pointer;
+    font-weight: 700;
   }
   #section-portfolio a:hover .details-button button:hover {
-    color: var(--color-muted);
+    color: var(--color-dark-orange);
   }
   #section-portfolio a:hover img {
-    display: none;
+    filter: blur(4px);
   }
   #section-portfolio .div-portfolio {
     flex-direction: column;
@@ -1154,6 +1586,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  #section-contact .text-white-dark:active,
+  #section-contact .text-white-dark:hover {
+    cursor: pointer !important;
+    color: var(--color-dark-orange) !important;
   }
   #section-contact .message-textarea {
     border-radius: 12px;
@@ -1184,6 +1621,10 @@ body {
   }
   #section-contact .roboto-condensed-400 {
     margin-top: 25px !important;
+    display: inline;
+  }
+  #section-contact .message-div {
+    display: inline;
   }
   #section-contact .contact-div {
     flex-direction: column;
@@ -1201,18 +1642,44 @@ body {
 }
 .load-images-slow {
   opacity: 0;
-  animation: slow-loading 3s ease-in-out 1s forwards;
+  animation: slow-loading 8s ease-in-out 1s forwards;
+}
+
+.load-letters-slow {
+  opacity: 0;
+  animation: slow-loading-letters 5s ease-in-out 1s forwards;
 }
 
 @keyframes slow-loading {
-  0% {
+  from {
     opacity: 0;
   }
-  50% {
-    opacity: 0.2;
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes slow-loading-letters {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slow-loading-side-bar {
+  from {
+    opacity: 0;
+    display: flex !important;
+    position: fixed !important;
+  }
+  to {
+    opacity: 0.3;
+    display: flex !important;
+    position: fixed !important;
   }
   100% {
-    opacity: 0.3;
+    display: flex !important;
+    position: fixed !important;
   }
 }
 @keyframes load-90 {

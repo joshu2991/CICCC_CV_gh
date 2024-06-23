@@ -2,14 +2,21 @@ var change_theme = document.getElementById("change-theme-button");
 var body_theme = document.getElementById("body");
 
 change_theme.addEventListener("click", () => {
+
     var home_image = document.getElementById("home-image");
     var mexican_image = document.getElementById("mexican-logo");
+    var tuid_image = document.getElementById("tuid-logo");
+    var section_home = document.getElementById("section-home");
+    var side_bar = document.getElementById("side_bar");
+
     if(body_theme.className == "theme-light"){
         body_theme.classList.remove("theme-light");
         body_theme.classList.add("theme-dark");
         localStorage.setItem('body-theme', 'dark');
         home_image.setAttribute("src", "media/index-background-dark.jpg");
         mexican_image.setAttribute("src", "media/mphr_logo_light.svg");
+        tuid_image.classList.remove("bg-black-card");
+        
 
         var dark_elements = document.getElementsByClassName("dark-theme");
         for(var i = 0; i < dark_elements.length; i++){
@@ -22,6 +29,7 @@ change_theme.addEventListener("click", () => {
         localStorage.setItem('body-theme', 'light');
         home_image.setAttribute("src", "media/index-background.jpg");
         mexican_image.setAttribute("src", "media/mphr_logo_dark.svg");
+        tuid_image.classList.add("bg-black-card");
 
         var dark_elements = document.getElementsByClassName("dark-theme");
         for(var i = 0; i < dark_elements.length; i++){
@@ -29,6 +37,10 @@ change_theme.addEventListener("click", () => {
         }
 
     }
+
+    side_bar.classList.add("opacity_zero");
+    section_home.classList.add("opacity_zero");
+    window.location.reload();
 });
 
 
@@ -36,6 +48,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     var home_image = document.getElementById("home-image");
     var current_theme = localStorage.getItem("body-theme");
     var mexican_image = document.getElementById("mexican-logo");
+    var tuid_image = document.getElementById("tuid-logo");
 
     if(typeof current_theme != "undefined" && current_theme != null){
 
@@ -47,6 +60,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             home_image.setAttribute("src", "media/index-background.jpg");
             mexican_image.setAttribute("src", "media/mphr_logo_dark.svg");
+            tuid_image.classList.add("bg-black-card");
 
             var dark_elements = document.getElementsByClassName("dark-theme");
             for(var i = 0; i < dark_elements.length; i++){
@@ -61,6 +75,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             home_image.setAttribute("src", "media/index-background-dark.jpg");
             mexican_image.setAttribute("src", "media/mphr_logo_light.svg");
+            tuid_image.classList.remove("bg-black-card");
 
             var dark_elements = document.getElementsByClassName("dark-theme");
             for(var i = 0; i < dark_elements.length; i++){
