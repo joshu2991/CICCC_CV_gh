@@ -27,4 +27,11 @@
   color: var(--color-dark-orange) !important;
   transition-property: background-color, color;
   transition-duration: 0.3s, 0.3s;
+}
+.dark.soft-skills-div {
+  border: none !important;
+}
+.dark.soft-skills-div div div {
+  filter: drop-shadow(2px 4px 6px black);
+  background-color: var(--color-dark-orange);
 }/*# sourceMappingURL=dark-theme.css.map */
