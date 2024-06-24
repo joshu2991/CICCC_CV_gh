@@ -33,8 +33,6 @@
     #section-contact {
         color: var(--color-white) !important;
         cursor: pointer !important;
-
-        
     }
 
     &.dark-border:active,
@@ -44,5 +42,18 @@
         transition-property: background-color, color;
         transition-duration: 0.3s, 0.3s;
     }
+
+    &.soft-skills-div {
+        border: none !important;
+        div {
+            div {
+                    filter: drop-shadow(2px 4px 6px black);
+                    background-color: var(--color-dark-orange);
+                }
+        }
+    }
+    
+
+    
 
 }
